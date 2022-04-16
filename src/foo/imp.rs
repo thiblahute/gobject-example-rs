@@ -174,6 +174,7 @@ pub(crate) mod ffi {
     pub type ExFoo = <super::Foo as super::ObjectSubclass>::Instance;
     pub type ExFooClass = super::FooClass;
 
+    /// ex_foo_increment:
     /// # Safety
     ///
     /// Must be a ExFoo object.
@@ -185,6 +186,8 @@ pub(crate) mod ffi {
     }
 
     // Trampolines to safe Rust implementations
+    /// ex_foo_get_counter:
+    ///
     /// # Safety
     ///
     /// Must be a FooInstance object.
@@ -194,6 +197,7 @@ pub(crate) mod ffi {
         imp.counter(&from_glib_borrow(this))
     }
 
+    /// ex_foo_get_name:
     /// # Safety
     ///
     /// Must be a FooInstance object.
@@ -204,6 +208,7 @@ pub(crate) mod ffi {
     }
 
     // GObject glue
+    /// ex_foo_new:
     /// # Safety
     ///
     /// Must be a valid C string, 0-terminated.

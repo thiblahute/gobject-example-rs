@@ -24,6 +24,7 @@ pub(crate) mod ffi {
 
     pub type ExRString = super::RString;
 
+    /// ex_rstring_new:
     /// # Safety
     ///
     /// Must be a valid C string, 0-terminated.
@@ -33,6 +34,7 @@ pub(crate) mod ffi {
         Box::into_raw(s)
     }
 
+    /// ex_rstring_copy:
     /// # Safety
     ///
     /// Must be a valid RString pointer.
@@ -43,6 +45,8 @@ pub(crate) mod ffi {
         Box::into_raw(s)
     }
 
+    /// ex_rstring_free:
+    ///
     /// # Safety
     ///
     /// Must be a valid RString pointer.
@@ -51,6 +55,8 @@ pub(crate) mod ffi {
         let _ = Box::from_raw(rstring);
     }
 
+    /// ex_rstring_get:
+    ///
     /// # Safety
     ///
     /// Must be a valid RString pointer.
@@ -60,6 +66,8 @@ pub(crate) mod ffi {
         rstring.get().to_glib_full()
     }
 
+    /// ex_rstring_set:
+    ///
     /// # Safety
     ///
     /// Must be a valid RString pointer, and a valid C string, 0-terminated.

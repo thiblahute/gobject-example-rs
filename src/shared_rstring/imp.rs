@@ -23,6 +23,8 @@ pub(crate) mod ffi {
 
     pub type ExSharedRString = super::SharedRString;
 
+    /// ex_shared_rsting_new:
+    ///
     /// # Safety
     ///
     /// Must be a valid C string, 0-terminated.
@@ -32,6 +34,8 @@ pub(crate) mod ffi {
         Box::into_raw(s) as *mut _
     }
 
+    /// ex_shared_rstring_ref:
+    ///
     /// # Safety
     ///
     /// Must be a valid SharedRString pointer.
@@ -45,6 +49,8 @@ pub(crate) mod ffi {
         Box::into_raw(s) as *mut _
     }
 
+    /// ex_shared_rstring_unref:
+    ///
     /// # Safety
     ///
     /// Must be a valid SharedRString pointer.
@@ -53,6 +59,8 @@ pub(crate) mod ffi {
         let _ = Box::from_raw(shared_rstring);
     }
 
+    /// ex_shared_rstring_get:
+    ///
     /// # Safety
     ///
     /// Must be a valid SharedRString pointer.

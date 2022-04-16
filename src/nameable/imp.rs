@@ -62,6 +62,8 @@ pub(crate) mod ffi {
     }
 
     // Virtual method callers
+    /// ex_nameable_get_name:
+    ///
     /// # Safety
     ///
     /// Must be a Nameable interface.

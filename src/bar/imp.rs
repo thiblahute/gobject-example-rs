@@ -88,6 +88,9 @@ pub(crate) mod ffi {
 
     pub type ExBar = <super::Bar as super::ObjectSubclass>::Instance;
 
+    /// ex_bar_get_number:
+    /// @this: A #ExBar
+    ///
     /// # Safety
     ///
     /// Must be a BarInstance object.
@@ -97,6 +100,7 @@ pub(crate) mod ffi {
         imp.number(&from_glib_borrow(this))
     }
 
+    /// ex_bar_set_number:
     /// # Safety
     ///
     /// Must be a BarInstance object.
@@ -107,6 +111,8 @@ pub(crate) mod ffi {
     }
 
     // GObject glue
+    /// ex_bar_new:
+    ///
     /// # Safety
     ///
     /// Must be a valid C string, 0-terminated.
